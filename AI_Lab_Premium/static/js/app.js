@@ -1,2 +1,0 @@
-// Small global enhancement: reveal elements as they enter the viewport.
-const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}}),{threshold:.08});document.querySelectorAll('.module-card,.panel,.stats div').forEach(e=>{e.style.opacity='0';e.style.transform='translateY(10px)';e.style.transition='opacity .5s ease,transform .5s ease';observer.observe(e)});
