@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-200 overflow-x-hidden;
+  }
+}
+
+/* Ambient Floating Backdrop Animation */
+@keyframes floatOrb1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(60px, -40px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, 50px) scale(0.92);
+  }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-50px, 60px) scale(1.1);
+  }
+  66% {
+    transform: translate(40px, -30px) scale(0.95);
+  }
+}
+
+@keyframes floatOrb3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, 40px) scale(1.08);
+  }
+}
+
+.ambient-orb-1 {
+  animation: floatOrb1 16s ease-in-out infinite;
+}
+
+.ambient-orb-2 {
+  animation: floatOrb2 22s ease-in-out infinite;
+}
+
+.ambient-orb-3 {
+  animation: floatOrb3 18s ease-in-out infinite;
+}
+
+/* In Sensory Friendly Mode, pause backdrop animations */
+.sensory-friendly .ambient-orb-1,
+.sensory-friendly .ambient-orb-2,
+.sensory-friendly .ambient-orb-3,
+.sensory-friendly * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Glassmorphism card utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.dark .glass-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* High Contrast Dark Mode */
+.high-contrast-dark {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast-dark .bg-white,
+.high-contrast-dark .bg-slate-50,
+.high-contrast-dark .bg-slate-100,
+.high-contrast-dark .bg-emerald-50,
+.high-contrast-dark .bg-amber-50,
+.high-contrast-dark .bg-rose-50,
+.high-contrast-dark .glass-card {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  backdrop-filter: none !important;
+}
+
+.high-contrast-dark .text-slate-900,
+.high-contrast-dark .text-slate-800,
+.high-contrast-dark .text-slate-700,
+.high-contrast-dark .text-slate-600 {
+  color: #ffffff !important;
+}
+
+.high-contrast-dark .text-slate-500,
+.high-contrast-dark .text-slate-400 {
+  color: #e2e8f0 !important;
+}
+
+.high-contrast-dark .border-slate-200,
+.high-contrast-dark .border-slate-100 {
+  border-color: #ffffff !important;
+  border-width: 2px !important;
+}
+
+.high-contrast-dark button,
+.high-contrast-dark a,
+.high-contrast-dark input,
+.high-contrast-dark select {
+  border-color: #ffffff !important;
+}
+
+.high-contrast-dark .bg-brand-600,
+.high-contrast-dark .bg-brand-700 {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* High Contrast Light Mode */
+.high-contrast-light {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast-light .border-slate-200,
+.high-contrast-light .border-slate-100 {
+  border-color: #000000 !important;
+  border-width: 2px !important;
+}
+
+.high-contrast-light .text-slate-500,
+.high-contrast-light .text-slate-600,
+.high-contrast-light .text-slate-700 {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+.high-contrast-light .bg-brand-600,
+.high-contrast-light .bg-brand-700 {
+  background-color: #004d40 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+/* Accessible Minimum Touch / Click Target helper */
+.touch-target-accessible {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Focus indicator override for all keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #059669;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+.high-contrast a:focus-visible,
+.high-contrast button:focus-visible,
+.high-contrast input:focus-visible,
+.high-contrast select:focus-visible,
+.high-contrast textarea:focus-visible,
+.high-contrast [tabindex]:focus-visible {
+  outline: 4px solid #ffff00 !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 3px #000000 !important;
+}

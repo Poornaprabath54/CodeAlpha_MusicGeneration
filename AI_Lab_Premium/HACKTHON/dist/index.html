@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23059669'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ClarityBites - Accessible, Transparent, and Inclusive Food Ordering Experience with complete ingredient disclosures, zero hidden fees, and multi-sensory order tracking." />
+    <title>ClarityBites | Accessible & Transparent Food Ordering</title>
+    
+    <!-- Google Fonts: Inter & Lexend (proven high readability for low vision & cognitive ease) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- OpenDyslexic Font CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/opendyslexic@1.0.3/open-dyslexic.css">
+
+    <style>
+      /* Base accessible focus ring */
+      :focus-visible {
+        outline: 3px solid #059669 !important;
+        outline-offset: 2px !important;
+      }
+      .high-contrast :focus-visible {
+        outline: 4px solid #ffff00 !important;
+        outline-offset: 3px !important;
+      }
+
+      /* Custom scrollbar for clean accessibility */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      .dark ::-webkit-scrollbar-track,
+      .high-contrast ::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+
+      /* Colorblind SVG filter classes */
+      .cb-protanopia {
+        filter: url('#protanopia-filter');
+      }
+      .cb-deuteranopia {
+        filter: url('#deuteranopia-filter');
+      }
+      .cb-tritanopia {
+        filter: url('#tritanopia-filter');
+      }
+      .cb-achromatopsia {
+        filter: grayscale(100%);
+      }
+
+      /* OpenDyslexic font override class */
+      .font-dyslexic, .font-dyslexic * {
+        font-family: 'OpenDyslexic', 'Lexend', sans-serif !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1.6 !important;
+      }
+
+      /* Sensory friendly reduced motion override */
+      .sensory-friendly, .sensory-friendly * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-dEJXl8e-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DuWPxy4g.css">
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased min-h-screen selection:bg-brand-500 selection:text-white">
+    <!-- SVG Color Blindness Simulation Matrices -->
+    <svg style="display: none">
+      <defs>
+        <!-- Protanopia (Red-blind) -->
+        <filter id="protanopia-filter">
+          <feColorMatrix type="matrix" values="0.567, 0.433, 0,     0, 0
+                                               0.558, 0.442, 0,     0, 0
+                                               0,     0.242, 0.758, 0, 0
+                                               0,     0,     0,     1, 0" />
+        </filter>
+        <!-- Deuteranopia (Green-blind) -->
+        <filter id="deuteranopia-filter">
+          <feColorMatrix type="matrix" values="0.625, 0.375, 0,   0, 0
+                                               0.7,   0.3,   0,   0, 0
+                                               0,     0.3,   0.7, 0, 0
+                                               0,     0,     0,   1, 0" />
+        </filter>
+        <!-- Tritanopia (Blue-blind) -->
+        <filter id="tritanopia-filter">
+          <feColorMatrix type="matrix" values="0.95, 0.05,  0,     0, 0
+                                               0,    0.433, 0.567, 0, 0
+                                               0,    0.475, 0.525, 0, 0
+                                               0,    0,     0,     1, 0" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div id="root"></div>
+  </body>
+</html>

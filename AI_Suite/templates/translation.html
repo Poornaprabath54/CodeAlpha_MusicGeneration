@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Translation</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body>
+<nav class="navbar"><a href="/" class="brand">CODEALPHA AI SUITE</a></nav>
+<main class="container">
+<section class="glass-card">
+<h1>🌍 Language Translation</h1>
+<div class="form-grid">
+<label>Source language
+<select id="source"><option value="AUTO">Auto Detect</option><option value="EN">English</option><option value="DE">German</option><option value="ES">Spanish</option><option value="FR">French</option><option value="IT">Italian</option><option value="JA">Japanese</option><option value="KO">Korean</option><option value="ZH">Chinese</option></select></label>
+<label>Target language
+<select id="target"><option value="EN-US">English</option><option value="DE">German</option><option value="ES">Spanish</option><option value="FR">French</option><option value="IT">Italian</option><option value="JA">Japanese</option><option value="KO">Korean</option><option value="ZH">Chinese</option></select></label>
+</div>
+<textarea id="text" rows="8" placeholder="Enter text to translate..."></textarea>
+<div class="actions"><button class="btn" id="translateBtn">Translate</button><button class="btn secondary" id="clearBtn">Clear</button></div>
+<div id="status" class="status"></div>
+<div class="result"><h3>Translation</h3><p id="result">Your translated text will appear here.</p><button class="btn small" id="copyBtn">Copy</button></div>
+<a class="back" href="/">← Back to dashboard</a>
+</section></main>
+<script src="{{ url_for('static', filename='js/translation.js') }}"></script>
+</body></html>

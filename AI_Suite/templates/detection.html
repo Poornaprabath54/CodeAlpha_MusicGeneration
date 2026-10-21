@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Object Detection</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body>
+<nav class="navbar"><a href="/" class="brand">CODEALPHA AI SUITE</a></nav>
+<main class="container">
+<section class="glass-card center">
+<h1>👁️ Object Detection & Tracking</h1>
+<p class="muted">YOLO detection with persistent tracking IDs.</p>
+<div class="video-wrap"><img id="feed" alt="Video feed"></div>
+<div class="actions"><button class="btn" id="startCamera">Start Webcam</button><button class="btn secondary" id="stopCamera">Stop</button></div>
+<div class="upload-row"><input type="file" id="videoFile" accept="video/*"><button class="btn" id="uploadBtn">Process Video</button></div>
+<p id="status" class="status"></p>
+<a class="back" href="/">← Back to dashboard</a>
+</section></main>
+<script src="{{ url_for('static', filename='js/detection.js') }}"></script>
+</body></html>

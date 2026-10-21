@@ -1,0 +1,17 @@
+{
+  "name": "sonora-worldwide-music",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Worldwide music search, in-page preview player, Taste Agent, account prototype and MiniMax AI Song Studio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
